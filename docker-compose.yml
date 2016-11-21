@@ -1,0 +1,16 @@
+version: '2'
+services:
+  php:
+    build: .
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    volumes:
+      - ./html:/var/www/html
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: www
+      MYSQL_ROOT_PASSWORD: root

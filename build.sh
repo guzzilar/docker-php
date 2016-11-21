@@ -1,0 +1,8 @@
+#!/bin/sh
+
+docker-compose stop
+
+docker-compose rm -f php
+docker-compose rm -f mysql
+
+docker-compose up --build
