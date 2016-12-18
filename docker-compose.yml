@@ -6,11 +6,15 @@ services:
       - "80:80"
     depends_on:
       - mysql
+    links:
+      - mysql
     volumes:
       - ./html:/var/www/html
 
   mysql:
     image: mysql
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: www
       MYSQL_ROOT_PASSWORD: root
